@@ -42,4 +42,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "Input text is: ${{env.TEXT}}"
-          echo "Workflow inputs ${{ toJson(github.event.inputs) }}"
+          echo "Workflow inputs: $JSON"
+        env:
+          JSON: ${{ toJson(github.event.inputs) }}
